@@ -7,3 +7,5 @@ def mane_function(abc): # проверка числа
 
 
 def test_function(abc_2):
+    print ("commit_1")
+    
