@@ -1,1 +1,1 @@
-def print_string ():
+def print_string (): # новый файл и новая функция
