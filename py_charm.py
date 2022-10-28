@@ -9,3 +9,4 @@ def print_string (text): # новый файл и новая функция
 
 #head py_charm_test
 print("создал новую главу и добавил код")
+print("добавил для теста еще код")
