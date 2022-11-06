@@ -1,6 +1,6 @@
-class TextProcessor():
+class TextProcessor:
     def __init__(self, text):
-        self.text = str(text)
+        self.text = text
         self.signs = signs = "?!. \'\"`,:;-_/()[]~"
 
     def __is_punktiantian(self):
@@ -13,12 +13,13 @@ class TextProcessor():
 
 
     def get_clean_string(self):
-        for test in self.signs:
-            self.text = self.text.replace(test, '')
-        return self.text
-
-str_my = 'qwefdsfds!!r'
+        if self.__is_punktiantian() == True:
+            for test in self.signs:
+                self.text = self.text.replace(test, '')
+            return f" text corrected {self.text} "
+        elif self.__is_punktiantian() == False:
+            return f" text in normal {self.text} "
+str_my = 'qwefsfdsr'
 procc = TextProcessor(str_my)
-ss = procc.get_clean_string
+ss = procc.get_clean_string()
 print(ss)
-
