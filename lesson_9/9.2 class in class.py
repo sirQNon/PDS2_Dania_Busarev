@@ -15,24 +15,28 @@ class TextProcessor:
         if self.__is_punktiantian() == True:
             for test in self.signs:
                 self.text = self.text.replace(test, '')
-            return f" text corrected {self.text} "
+            return f" text corrected: {self.text} "
         elif self.__is_punktiantian() == False:
-            return f" text in normal {self.text} "
+            return f" text in normal: {self.text} "
 
 
-str_my = 'love!! my code'
+str_my = 'love!! my code ?1'
+
+
 procc = TextProcessor(str_my)
 ss = procc.get_clean_string()
 print(ss)
 
+
 class TextLoader:
-    def __init__(self):
+    def __init__(self, text_2):
+        self.text_2 = text_2
         self.__text_proccesor = TextProcessor
         self.__clean_string = None
         self.text_continue = None
 
-    def set_clean_text(self, text_2):
-        self.text_continue = self.__text_proccesor(text_2)
+    def set_clean_text(self):
+        self.text_continue = self.__text_proccesor(self.text_2)
         self.__clean_string = self.__text_proccesor.get_clean_string(self.text_continue)
         self.clean_string
 
@@ -40,8 +44,29 @@ class TextLoader:
     def clean_string(self):
         return print(self.__clean_string)
 
+str_my_2 = 'love!! my code !2'
+call_class = TextLoader(str_my_2)
+call_method = call_class.set_clean_text()
 
-call_class = TextLoader()
-call_method = call_class.set_clean_text(str_my)
 
 
+class Datainterface:
+    def __init__(self, list_text):
+        self.list_text = list_text
+        self.__data = TextLoader
+        self.text_wait = None
+        self.text_to_loader = None
+        self.convert = None
+
+    def process_text(self):
+        if isinstance(self.list_text, str):
+            self.convert = self.list_text
+        elif isinstance(self.list_text, list):
+            self.convert = " ".join(self.list_text)
+        self.text_wait = self.__data(self.convert)
+        self.text_to_loader = self.__data.set_clean_text(self.text_wait)
+        return self.text_wait
+
+new_list_str = ["real call class!", "love code phyton!", "new work interesting!", "please leave your comment on the code ?"]
+call_data_interface = Datainterface(new_list_str)
+call_method_process = call_data_interface.process_text()
