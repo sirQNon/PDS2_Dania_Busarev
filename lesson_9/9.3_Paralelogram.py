@@ -11,23 +11,22 @@ class Parallelogram:
         self.result = self.width * self.length
         return self.result
 
+
 class Square(Parallelogram):
-
-    def __init__(self):
-        Parallelogram.__init__(self)
-
-
+    def __init__(self, width):
+        super().__init__(width, length=width)
     def get_area(self):
-        self.length = self.length * 2
-        return self.length
+       super().get_area()
+       result_square = self.length **2
+       return f" area square: {result_square}"
 
-
-input_width = 5
-input_lenght = 6
+input_width = input("введите ширину")
+input_lenght = input("введите длину")
 object_in_class_parallelogram = Parallelogram(input_width,input_lenght)
-call_method_class_parallelogram = object_in_class_parallelogram.get_area
+call_method_class_parallelogram = object_in_class_parallelogram.get_area()
 print(f" area Parallelogram: {call_method_class_parallelogram} ")
 
 
 object_in_class_Square = Square(input_lenght)
-#call_method_class_Square = object_in_class_Square.get_area()
+call_method_class_Square = object_in_class_Square.get_area()
+print(call_method_class_Square)
