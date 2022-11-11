@@ -20,8 +20,8 @@ class Square(Parallelogram):
        result_square = self.length **2
        return f" area square: {result_square}"
 
-input_width = input("введите ширину")
-input_lenght = input("введите длину")
+input_width = int(input("введите ширину"))
+input_lenght = int(input("введите длину"))
 object_in_class_parallelogram = Parallelogram(input_width,input_lenght)
 call_method_class_parallelogram = object_in_class_parallelogram.get_area()
 print(f" area Parallelogram: {call_method_class_parallelogram} ")
