@@ -3,7 +3,6 @@
 
 
 class Storage:
-    try:
         def __init__(self, product, quantity, brand):
             self.product = product
             self.quantity = quantity
@@ -11,12 +10,16 @@ class Storage:
             if product == int or brand == int or quantity == str:
                 raise Warning("incorrect input")
         def quantity_product(self):
-            return f" product: {self.product} quantity: {self.quantity}"
+            try:
+                return f" product: {self.product} quantity: {self.quantity}"
+            except Exception as ex:
+                return print(f"unaccounted for error {str(ex)} ")
 
         def quntity_brand(self):
-            return f" under the brand: {self.brand} we have a product {self.product} and quntity {self.quantity}"
-    except Exception as ex:
-        return ex
+            try:
+                return f" under the brand: {self.brand} we have a product {self.product} and quntity {self.quantity}"
+            except Exception as ex_2:
+                return print(f"unaccounted for error {str(ex_2)} ")
 
 
 
