@@ -3,24 +3,24 @@
 
 
 class Storage:
-        def __init__(self, product, quantity, brand):
-            self.product = product
-            self.quantity = quantity
-            self.brand = brand
-            if product == int or brand == int or quantity == str:
-                raise Warning("incorrect input")
-        def quantity_product(self):
-            try:
-                return f" product: {self.product} quantity: {self.quantity}"
-            except Exception as ex:
-                return print(f"unaccounted for error {str(ex)} ")
+    def __init__(self, product, quantity, brand):
+        self.product = product
+        self.quantity = quantity
+        self.brand = brand
+        if product == int or brand == int or quantity == str:
+            raise Warning("incorrect input")
 
-        def quntity_brand(self):
-            try:
-                return f" under the brand: {self.brand} we have a product {self.product} and quntity {self.quantity}"
-            except Exception as ex_2:
-                return print(f"unaccounted for error {str(ex_2)} ")
+    def quantity_product(self):
+        try:
+            return f" product: {self.product} quantity: {self.quantity}"
+        except Exception as ex:
+            return print(f"unaccounted for error {str(ex)} ")
 
+    def quntity_brand(self):
+        try:
+            return f" under the brand: {self.brand} we have a product {self.product} and quntity {self.quantity}"
+        except Exception as ex_2:
+            return print(f"unaccounted for error {str(ex_2)} ")
 
 
 trade_in_class = Storage("SSD", 120, "Samsung")
