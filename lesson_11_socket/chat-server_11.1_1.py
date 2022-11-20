@@ -13,3 +13,4 @@ while True:
     connection.send(input("input text: ").encode("utf-8"))
     data_server = connection.recv(1024)
     print(data_server.decode("utf-8"))
+#done
